@@ -1,1 +1,1 @@
-Java - Swing - MySQL - JFrame
+Java - Swing(Desktop based application) - MySQL - JFrame - AWT - abstract window toolkit
