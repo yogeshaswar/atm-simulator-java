@@ -1,11 +1,17 @@
 import javax.swing.*;
 import java.awt.*;
+import java.awt.event.*;
 
-public class Login extends JFrame {
+public class Login extends JFrame implements ActionListener {
+    // Globally define buttons:
+    JButton login, signUp, clear;
+    JTextField cardInput;
+    JPasswordField pinInput;
+
     Login() {
         setLayout(null);
         // setSize defines dimensions
-        setSize(1000, 500);
+        setSize(800, 500);
         // setVisible makes visible
         setVisible(true);
         // Screen Location
@@ -36,36 +42,63 @@ public class Login extends JFrame {
         card.setFont(new Font("Raleway", Font.BOLD, 28));
         add(card);
         // Input card
-        JTextField cardInput = new JTextField();
-        cardInput.setBounds(300, 150, 250, 30);
+        cardInput = new JTextField();
+        cardInput.setBounds(300, 150, 230, 30);
+        cardInput.setFont(new Font("Arial", Font.BOLD, 18));
+        add(cardInput);
+
         // Pin
         JLabel pin = new JLabel("Pin");
         pin.setBounds(120, 220, 150, 30);
         pin.setFont(new Font("Raleway", Font.BOLD, 28));
         add(pin);
         // Input pin
-        JTextField pinInput = new JTextField();
-        pinInput.setBounds(300, 220, 250, 30);
+        pinInput = new JPasswordField();
+        pinInput.setBounds(300, 220, 230, 30);
+        pinInput.setFont(new Font("Arial", Font.BOLD, 18));
+        add(pinInput);
 
         // Button
 
-        JButton login = new JButton("SIGN IN");
+        login = new JButton("SIGN IN");
         login.setBackground(Color.BLACK);
         login.setForeground(Color.WHITE);
         login.setBounds(300, 300, 100, 30);
         add(login);
 
-        JButton clear = new JButton("CLEAR");
+        // Action Listener:
+        login.addActionListener(this);
+
+        clear = new JButton("CLEAR");
         clear.setBackground(Color.BLACK);
         clear.setForeground(Color.WHITE);
         clear.setBounds(430, 300, 100, 30);
         add(clear);
-        JButton signUp = new JButton("SIGN UP");
+
+        // Action Listener:
+        clear.addActionListener(this);
+
+        signUp = new JButton("SIGN UP");
         signUp.setBackground(Color.BLACK);
         signUp.setForeground(Color.WHITE);
-        signUp.setBounds(400, 350, 100, 30);
+        signUp.setBounds(360, 350, 100, 30);
         add(signUp);
 
+        // Action Listener:
+        signUp.addActionListener(this);
+
+    }
+
+    public void actionPerformed(ActionEvent ae) {
+        // what action should be performed after button click is defined here
+        if (ae.getSource() == clear) {
+            cardInput.setText("");
+            pinInput.setText("");
+        } else if (ae.getSource() == login) {
+            // code
+        } else if (ae.getSource() == signUp) {
+            // code
+        }
     }
 
     public static void main(String[] args) {
