@@ -10,6 +10,7 @@ public class SignupOne extends JFrame implements ActionListener {
     JTextField nameInput, fNameInput, emailInput, adressInput, cityInput, stateInput, pinInput;
     JButton next;
     Random random;
+    long randomNo;
     JRadioButton male, female, married, single, other;
     JDateChooser dateChooser;
 
@@ -24,8 +25,9 @@ public class SignupOne extends JFrame implements ActionListener {
 
         // Random Form No:
         random = new Random();
-        // System.out.println((Math.abs(randomNo.nextLong())%9000) + 1000);
-        long randomNo = Math.abs((random.nextLong() % 9000L) + 1000L);
+        // System.out.println((Math.abs(random.nextLong())%9000) + 1000);
+        randomNo = Math.abs((random.nextLong() % 9000L) + 1000L);
+        // System.out.println(randomNo);
         // Form No:
         JLabel formNo = new JLabel("Application Form No: " + randomNo);
         formNo.setFont(new Font("Arial", Font.BOLD, 38));
@@ -174,7 +176,7 @@ public class SignupOne extends JFrame implements ActionListener {
     }
 
     public void actionPerformed(ActionEvent ae) {
-        String formno = "" + random; // Long convert String "" +
+        String formno = "" + randomNo; // Long convert String "" +
         String name = nameInput.getText(); // getText() vs setText()
         String fName = fNameInput.getText();
         String dob = ((JTextField) dateChooser.getDateEditor().getUiComponent()).getText();
@@ -202,44 +204,37 @@ public class SignupOne extends JFrame implements ActionListener {
             // Validation
             if (name.equals("")) {
                 JOptionPane.showMessageDialog(null, "Name required");
-            } else if(fName.equals("")) {
-                    JOptionPane.showMessageDialog(null, "Father Name required");
+            } else if (fName.equals("")) {
+                JOptionPane.showMessageDialog(null, "Father Name required");
             } else if (dob.equals("")) {
                 JOptionPane.showMessageDialog(null, "DOB required");
-            }
-            else  if (gender.equals("")) {
+            } else if (gender.equals("")) {
                 JOptionPane.showMessageDialog(null, "Gender required");
-            }
-            else  if (email.equals("")) {
+            } else if (email.equals("")) {
                 JOptionPane.showMessageDialog(null, "Email required");
-            }
-            else  if (adress.equals("")) {
+            } else if (adress.equals("")) {
                 JOptionPane.showMessageDialog(null, "Address required");
-            }
-            else  if (city.equals("")) {
+            } else if (city.equals("")) {
                 JOptionPane.showMessageDialog(null, "City required");
-            }
-            else if (state.equals("")) {
+            } else if (state.equals("")) {
                 JOptionPane.showMessageDialog(null, "State required");
-            }
-            else if (marital.equals("")) {
+            } else if (marital.equals("")) {
                 JOptionPane.showMessageDialog(null, "Marital Status required");
-            }
-            else if (pin.equals("")) {
+            } else if (pin.equals("")) {
                 JOptionPane.showMessageDialog(null, "Pin required");
-            }
-            else {
+            } else {
                 Conn c = new Conn();
-                String query = "insert into signup values('"+formno+"','"+name+"','"+fName+"','"+dob+"','"+gender+"','"+email+"','"+marital+"','"+adress+"','"+city+"','"+state+"','"+pin+"')";
+                String query = "insert into signup values('" + formno + "','" + name + "','" + fName + "','" + dob
+                        + "','" + gender + "','" + email + "','" + marital + "','" + adress + "','" + city + "','"
+                        + state + "','" + pin + "')";
                 c.s.executeUpdate(query);
             }
 
-        }catch(
+        } catch (
 
-    Exception e)
-    {
-        System.out.println(e.getMessage());
-    }
+        Exception e) {
+            System.out.println(e.getMessage());
+        }
 
     }
 
