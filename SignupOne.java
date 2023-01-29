@@ -119,9 +119,9 @@ public class SignupOne extends JFrame implements ActionListener {
         add(other);
         // Only one RButton should be selected
         ButtonGroup maritalBtnGroup = new ButtonGroup();
-        genderBtnGroup.add(single);
-        genderBtnGroup.add(married);
-        genderBtnGroup.add(other);
+        maritalBtnGroup.add(single);
+        maritalBtnGroup.add(married);
+        maritalBtnGroup.add(other);
         // address
         JLabel address = new JLabel("Address: ");
         address.setFont(new Font("Arial", Font.BOLD, 26));
@@ -199,31 +199,47 @@ public class SignupOne extends JFrame implements ActionListener {
         String pin = pinInput.getText();
 
         try {
-            //Validation
+            // Validation
             if (name.equals("")) {
                 JOptionPane.showMessageDialog(null, "Name required");
+            } else if(fName.equals("")) {
+                    JOptionPane.showMessageDialog(null, "Father Name required");
+            } else if (dob.equals("")) {
+                JOptionPane.showMessageDialog(null, "DOB required");
             }
-            if (name.equals("")) {
-                JOptionPane.showMessageDialog(null, "Name required");
+            else  if (gender.equals("")) {
+                JOptionPane.showMessageDialog(null, "Gender required");
             }
-            if (name.equals("")) {
-                JOptionPane.showMessageDialog(null, "Name required");
+            else  if (email.equals("")) {
+                JOptionPane.showMessageDialog(null, "Email required");
             }
-            if (name.equals("")) {
-                JOptionPane.showMessageDialog(null, "Name required");
+            else  if (adress.equals("")) {
+                JOptionPane.showMessageDialog(null, "Address required");
             }
-            if (name.equals("")) {
-                JOptionPane.showMessageDialog(null, "Name required");
+            else  if (city.equals("")) {
+                JOptionPane.showMessageDialog(null, "City required");
             }
-            if (name.equals("")) {
-                JOptionPane.showMessageDialog(null, "Name required");
+            else if (state.equals("")) {
+                JOptionPane.showMessageDialog(null, "State required");
             }
-            if (name.equals("")) {
-                JOptionPane.showMessageDialog(null, "Name required");
+            else if (marital.equals("")) {
+                JOptionPane.showMessageDialog(null, "Marital Status required");
             }
-        } catch (Exception e) {
-            System.out.println(e.getMessage());
-        }
+            else if (pin.equals("")) {
+                JOptionPane.showMessageDialog(null, "Pin required");
+            }
+            else {
+                Conn c = new Conn();
+                String query = "insert into signup values('"+formno+"','"+name+"','"+fName+"','"+dob+"','"+gender+"','"+email+"','"+marital+"','"+adress+"','"+city+"','"+state+"','"+pin+"')";
+                c.s.executeUpdate(query);
+            }
+
+        }catch(
+
+    Exception e)
+    {
+        System.out.println(e.getMessage());
+    }
 
     }
 
