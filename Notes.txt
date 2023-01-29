@@ -1,1 +1,6 @@
 Java - Swing(Desktop based application) - MySQL - JFrame - AWT - abstract window toolkit
+
+Notes: MySQL database commands:
+1. create database bankmanagementsystem(dbName);
+2. show databases;
+3. use bankmanagementsystem;

@@ -2,12 +2,16 @@ import java.awt.Color;
 import java.awt.Font;
 import java.util.Random;
 import com.toedter.calendar.JDateChooser;
+import java.awt.event.*;
 
 import javax.swing.*;
 
-public class SignupOne extends JFrame {
+public class SignupOne extends JFrame implements ActionListener {
     JTextField nameInput, fNameInput, emailInput, adressInput, cityInput, stateInput, pinInput;
     JButton next;
+    Random random;
+    JRadioButton male, female, married, single, other;
+    JDateChooser dateChooser;
 
     SignupOne() {
         setLayout(null);
@@ -19,7 +23,7 @@ public class SignupOne extends JFrame {
         getContentPane().setBackground(Color.WHITE);
 
         // Random Form No:
-        Random random = new Random();
+        random = new Random();
         // System.out.println((Math.abs(randomNo.nextLong())%9000) + 1000);
         long randomNo = Math.abs((random.nextLong() % 9000L) + 1000L);
         // Form No:
@@ -59,7 +63,7 @@ public class SignupOne extends JFrame {
         add(dOB);
         // dateInput - Calender
         // prequizit - Jar file add, com. - package import
-        JDateChooser dateChooser = new JDateChooser();
+        dateChooser = new JDateChooser();
         dateChooser.setBounds(330, 240, 600, 30);
         add(dateChooser);
 
@@ -69,12 +73,12 @@ public class SignupOne extends JFrame {
         gender.setBounds(100, 290, 200, 30);
         add(gender);
         // radio button
-        JRadioButton male = new JRadioButton("Male");
+        male = new JRadioButton("Male");
         male.setBounds(330, 290, 80, 30);
         male.setBackground(Color.WHITE);
         add(male);
         // radio button female
-        JRadioButton female = new JRadioButton("Female");
+        female = new JRadioButton("Female");
         female.setBounds(450, 290, 80, 30);
         female.setBackground(Color.WHITE);
         add(female);
@@ -99,17 +103,17 @@ public class SignupOne extends JFrame {
         marital.setBounds(100, 390, 200, 30);
         add(marital);
         // radio button
-        JRadioButton single = new JRadioButton("Single");
+        single = new JRadioButton("Single");
         single.setBounds(330, 390, 80, 30);
         single.setBackground(Color.WHITE);
         add(single);
         // radio button
-        JRadioButton married = new JRadioButton("Married");
+        married = new JRadioButton("Married");
         married.setBounds(450, 390, 80, 30);
         married.setBackground(Color.WHITE);
         add(married);
         // radio button
-        JRadioButton other = new JRadioButton("Other");
+        other = new JRadioButton("Other");
         other.setBounds(580, 390, 80, 30);
         other.setBackground(Color.WHITE);
         add(other);
@@ -164,7 +168,62 @@ public class SignupOne extends JFrame {
         next.setBounds(824, 660, 100, 34);
         next.setBackground(Color.BLACK);
         next.setForeground(Color.WHITE);
+        next.addActionListener(this);
         add(next);
+
+    }
+
+    public void actionPerformed(ActionEvent ae) {
+        String formno = "" + random; // Long convert String "" +
+        String name = nameInput.getText(); // getText() vs setText()
+        String fName = fNameInput.getText();
+        String dob = ((JTextField) dateChooser.getDateEditor().getUiComponent()).getText();
+        String gender = null;
+        if (male.isSelected()) {
+            gender = "Male";
+        } else {
+            gender = "Female";
+        }
+        String marital = null;
+        if (married.isSelected()) {
+            marital = "Married";
+        } else if (single.isSelected()) {
+            marital = "Single";
+        } else {
+            marital = "Other";
+        }
+        String email = emailInput.getText();
+        String adress = adressInput.getText();
+        String city = cityInput.getText();
+        String state = stateInput.getText();
+        String pin = pinInput.getText();
+
+        try {
+            //Validation
+            if (name.equals("")) {
+                JOptionPane.showMessageDialog(null, "Name required");
+            }
+            if (name.equals("")) {
+                JOptionPane.showMessageDialog(null, "Name required");
+            }
+            if (name.equals("")) {
+                JOptionPane.showMessageDialog(null, "Name required");
+            }
+            if (name.equals("")) {
+                JOptionPane.showMessageDialog(null, "Name required");
+            }
+            if (name.equals("")) {
+                JOptionPane.showMessageDialog(null, "Name required");
+            }
+            if (name.equals("")) {
+                JOptionPane.showMessageDialog(null, "Name required");
+            }
+            if (name.equals("")) {
+                JOptionPane.showMessageDialog(null, "Name required");
+            }
+        } catch (Exception e) {
+            System.out.println(e.getMessage());
+        }
 
     }
 
