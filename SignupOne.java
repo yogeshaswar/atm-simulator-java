@@ -64,7 +64,7 @@ public class SignupOne extends JFrame implements ActionListener {
         dOB.setBounds(100, 240, 200, 30);
         add(dOB);
         // dateInput - Calender
-        // prequizit - Jar file add, com. - package import
+        // prequisit - Jar file add, com. - package import
         dateChooser = new JDateChooser();
         dateChooser.setBounds(330, 240, 600, 30);
         add(dateChooser);
