@@ -3,14 +3,14 @@ import java.awt.*;
 import java.awt.event.*;
 
 public class Login extends JFrame implements ActionListener {
-    // Globally define buttons:
+    // Globally define properties:
     JButton login, signUp, clear;
     JTextField cardInput;
     JPasswordField pinInput;
 
     Login() {
         setLayout(null);
-        // setSize defines dimensions
+        // setSize defines dimensions of frame
         setSize(800, 500);
         // setVisible makes visible
         setVisible(true);
