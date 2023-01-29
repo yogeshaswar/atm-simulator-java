@@ -119,7 +119,7 @@ public class SignupOne extends JFrame implements ActionListener {
         other.setBounds(580, 390, 80, 30);
         other.setBackground(Color.WHITE);
         add(other);
-        // Only one RButton should be selected
+        // Only one Radio-Button should be selected
         ButtonGroup maritalBtnGroup = new ButtonGroup();
         maritalBtnGroup.add(single);
         maritalBtnGroup.add(married);

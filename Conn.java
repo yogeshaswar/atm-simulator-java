@@ -3,7 +3,7 @@ import java.sql.*;
 // Step 1: Register the driver
 public class Conn {
 
-    // JDBC connection
+    // JDBC (Java Database Connectivity) connection
     // Step 1: Register the driver
     // Step 2: Create connection
     // Step 3: Create statement
@@ -18,7 +18,7 @@ public class Conn {
         // exception handling
         try {
             // Driver register
-            //Class.forName(com.mysql.cj.jdbc.Driver);
+            // Class.forName(com.mysql.cj.jdbc.Driver);
             // Step 2: Create connection
             c = DriverManager.getConnection("jdbc:mysql:///bankmanagementsystem", "root", "Ideclare@99233");
             // Notes: MySQL database commands:
