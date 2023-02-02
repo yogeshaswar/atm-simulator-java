@@ -14,7 +14,8 @@ public class SignupOne extends JFrame implements ActionListener {
     JRadioButton male, female, married, single, other;
     JDateChooser dateChooser;
 
-    SignupOne() {
+    // Constructor:
+    public SignupOne() {
         setLayout(null);
         // Frame
         setSize(850, 1000);
@@ -176,6 +177,7 @@ public class SignupOne extends JFrame implements ActionListener {
     }
 
     public void actionPerformed(ActionEvent ae) {
+        // Data store => variables => String
         String formno = "" + randomNo; // Long convert String "" +
         String name = nameInput.getText(); // getText() vs setText()
         String fName = fNameInput.getText();
@@ -223,16 +225,18 @@ public class SignupOne extends JFrame implements ActionListener {
             } else if (pin.equals("")) {
                 JOptionPane.showMessageDialog(null, "Pin required");
             } else {
+                // Step 4: Execute query
                 Conn c = new Conn();
                 String query = "insert into signup values('" + formno + "','" + name + "','" + fName + "','" + dob
                         + "','" + gender + "','" + email + "','" + marital + "','" + adress + "','" + city + "','"
                         + state + "','" + pin + "')";
                 c.s.executeUpdate(query);
+
+                setVisible(false);
+                new SignupTwo(formno).setVisible(true);
             }
 
-        } catch (
-
-        Exception e) {
+        } catch (Exception e) {
             System.out.println(e.getMessage());
         }
 

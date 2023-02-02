@@ -8,7 +8,8 @@ public class Login extends JFrame implements ActionListener {
     JTextField cardInput;
     JPasswordField pinInput;
 
-    Login() {
+    //constructor:
+    public Login() {
         setLayout(null);
         // setSize defines dimensions of frame
         setSize(800, 500);

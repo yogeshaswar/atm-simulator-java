@@ -3,5 +3,6 @@
     "lib/**/*.jar",
     "models/jcalendar-tz-1.3.3-4.jar",
     "models/mysql-connector-java-8.0.28.jar"
-  ]
+  ],
+  "java.debug.settings.onBuildFailureProceed": true
 }
