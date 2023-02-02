@@ -35,7 +35,7 @@ public class SignupTwo extends JFrame implements ActionListener {
         // Input
 
         String[] religionList = { "Hindu", "Muslim", "Sikh", "Other" };
-        JComboBox religionInput = new JComboBox(religionList);
+        religionInput = new JComboBox(religionList);
         religionInput.setBackground(Color.WHITE);
         religionInput.setFont(new Font("Arial", Font.BOLD, 14));
         religionInput.setBounds(330, 140, 600, 30);
@@ -47,7 +47,7 @@ public class SignupTwo extends JFrame implements ActionListener {
         add(category);
         // Input
         String[] categoryList = { "---Select Category---", "OBC", "ST", "NT", "OPEN", "GENERAL", "OTHER" };
-        JComboBox categoryInput = new JComboBox(categoryList);
+        categoryInput = new JComboBox(categoryList);
         categoryInput.setBackground(Color.WHITE);
         categoryInput.setFont(new Font("Arial", Font.BOLD, 14));
         categoryInput.setBounds(330, 190, 600, 30);
@@ -60,7 +60,7 @@ public class SignupTwo extends JFrame implements ActionListener {
         // Input
         String[] incomeList = { "---Select Income---", "Null", "< 1,50,000", "< 2,50,000", "< 500,000",
                 "up to 10,00,000", "OTHER" };
-        JComboBox incomeInput = new JComboBox(incomeList);
+        incomeInput = new JComboBox(incomeList);
         incomeInput.setBackground(Color.WHITE);
         incomeInput.setFont(new Font("Arial", Font.BOLD, 14));
         incomeInput.setBounds(330, 240, 600, 30);
@@ -75,7 +75,7 @@ public class SignupTwo extends JFrame implements ActionListener {
         // Input
         String[] educationList = { "---Select Educational Qualification---", "Non-Graduate", "Graduate",
                 "Post Graduate", "Doctrate", "OTHER" };
-        JComboBox educationalInput = new JComboBox(educationList);
+        educationalInput = new JComboBox(educationList);
         categoryInput.setBackground(Color.WHITE);
         educationalInput.setFont(new Font("Arial", Font.BOLD, 14));
         educationalInput.setBounds(330, 290, 600, 30);
@@ -90,7 +90,7 @@ public class SignupTwo extends JFrame implements ActionListener {
         // Input
         String[] occupationList = { "---Select Occupation---", "Salaried", "Self Employeed", "Business", "Student",
                 "Retired", "Other" };
-        JComboBox occupationInput = new JComboBox(occupationList);
+        occupationInput = new JComboBox(occupationList);
         occupationInput.setBackground(Color.WHITE);
         occupationInput.setFont(new Font("Arial", Font.BOLD, 14));
         occupationInput.setBounds(330, 340, 600, 30);
@@ -141,7 +141,7 @@ public class SignupTwo extends JFrame implements ActionListener {
         add(seniorNoInput);
         // Only one Radio-Button should be selected
         ButtonGroup seniorBtnGroup = new ButtonGroup();
-        // seniorBtnGroup.add(seniorYesInput);
+        seniorBtnGroup.add(seniorYesInput);
         seniorBtnGroup.add(seniorNoInput);
 
         // exixtingAccount
@@ -208,6 +208,9 @@ public class SignupTwo extends JFrame implements ActionListener {
                     +
                     existingAcc + "')";
             c.s.executeUpdate(query);
+            //close signupTwo
+            setVisible(false);
+            new SignupThree(formno).setVisible(true);
 
         } catch (Exception e) {
             System.out.println(e.getMessage());
