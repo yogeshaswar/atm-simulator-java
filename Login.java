@@ -1,6 +1,7 @@
 import javax.swing.*;
 import java.awt.*;
 import java.awt.event.*;
+import java.sql.*;
 
 public class Login extends JFrame implements ActionListener {
     // Globally define properties:
@@ -8,7 +9,7 @@ public class Login extends JFrame implements ActionListener {
     JTextField cardInput;
     JPasswordField pinInput;
 
-    //constructor:
+    // constructor:
     public Login() {
         setLayout(null);
         // setSize defines dimensions of frame
@@ -96,9 +97,29 @@ public class Login extends JFrame implements ActionListener {
             cardInput.setText("");
             pinInput.setText("");
         } else if (ae.getSource() == login) {
-            // code
+            Conn c = new Conn();
+            String cardNumber = cardInput.getText();
+            String pinNumber = pinInput.getText();
+            // Data retrive => login table
+            String query = "select * from login where cardNumber = '" + cardNumber + "' and pinNumber =  '" + pinNumber
+                    + "' ";
+            try {
+                // storing data returned
+                ResultSet resultSet = c.s.executeQuery(query);
+                // check
+                if (resultSet.next()) {
+                    // data valid
+                    setVisible(false);
+                    new Transcactions(pinNumber).setVisible(true);
+                } else {
+                    // data invalid
+                    JOptionPane.showMessageDialog(null, "Invalid card number or pin");
+                }
+            } catch (Exception e) {
+                System.out.println(e.getMessage());
+            }
         } else if (ae.getSource() == signUp) {
-            //current frame - close
+            // current frame - close
             setVisible(false);
             new SignupOne().setVisible(true);
         }
