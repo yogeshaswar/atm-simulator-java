@@ -182,6 +182,7 @@ public class SignupThree extends JFrame implements ActionListener {
             pinNumber = "" + Math.abs((random.nextInt() % 9000) + 1000);
             System.out.println(pinNumber);
 
+            // checkbox input
             String services = "";
             if (cATM.isSelected()) {
                 services = services + "ATM Card";

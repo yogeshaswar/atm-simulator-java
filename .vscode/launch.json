@@ -6,6 +6,13 @@
   "configurations": [
     {
       "type": "java",
+      "name": "Launch Deposite",
+      "request": "launch",
+      "mainClass": "Deposite",
+      "projectName": "bank-management_4570468b"
+    },
+    {
+      "type": "java",
       "name": "Launch Transcactions",
       "request": "launch",
       "mainClass": "Transcactions",

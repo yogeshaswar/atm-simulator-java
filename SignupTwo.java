@@ -13,8 +13,8 @@ public class SignupTwo extends JFrame implements ActionListener {
 
     // constructor:
     public SignupTwo(String formno) {
-        // this.formno = formno;
-        formno = "378435";
+        this.formno = formno;
+        //formno = "378435";
         setLayout(null);
         setSize(1000, 1000);
         setVisible(true);
@@ -34,7 +34,7 @@ public class SignupTwo extends JFrame implements ActionListener {
         add(religion);
         // Input
 
-        String[] religionList = { "Hindu", "Muslim", "Sikh", "Other" };
+        String[] religionList = { "---Select Religion---", "Hindu", "Muslim", "Sikh", "Other" };
         religionInput = new JComboBox(religionList);
         religionInput.setBackground(Color.WHITE);
         religionInput.setFont(new Font("Arial", Font.BOLD, 14));
