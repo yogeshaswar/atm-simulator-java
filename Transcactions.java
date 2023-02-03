@@ -18,7 +18,7 @@ public class Transcactions extends JFrame implements ActionListener {
         setSize(900, 900);
         setVisible(true);
         setLocation(300, 0);
-        //setUndecorated(true); // Title bar gayab
+        // setUndecorated(true); // Title bar gayab
         getContentPane().setBackground(Color.WHITE);
 
         // ImageIcon
@@ -84,12 +84,14 @@ public class Transcactions extends JFrame implements ActionListener {
             setVisible(false);
             new FastCash(pinNumber).setVisible(true);
         } else if (ae.getSource() == miniStatement) {
-            // action
+            setVisible(false);
+            new MiniStatement(pinNumber).setVisible(true);
         } else if (ae.getSource() == pinChange) {
             setVisible(false);
             new PinChange(pinNumber).setVisible(true);
         } else if (ae.getSource() == balanceInquiry) {
-            // action
+            setVisible(false);
+            new BalanceEnquiry(pinNumber).setVisible(true);
         } else if (ae.getSource() == exit) {
             setVisible(false);
         }

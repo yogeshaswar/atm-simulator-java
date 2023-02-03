@@ -6,6 +6,13 @@
   "configurations": [
     {
       "type": "java",
+      "name": "Launch BalanceEnquiry",
+      "request": "launch",
+      "mainClass": "BalanceEnquiry",
+      "projectName": "bank-management_4570468b"
+    },
+    {
+      "type": "java",
       "name": "Launch PinChange",
       "request": "launch",
       "mainClass": "PinChange",
