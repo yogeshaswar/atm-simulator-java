@@ -75,9 +75,11 @@ public class Transcactions extends JFrame implements ActionListener {
 
     public void actionPerformed(ActionEvent ae) {
         if (ae.getSource() == deposite) {
-            // action
+            setVisible(false);
+            new Deposite(pinNumber).setVisible(true);
         } else if (ae.getSource() == widraw) {
-            // action
+            setVisible(false);
+            new Widrawal(pinNumber).setVisible(true);
         } else if (ae.getSource() == fastCash) {
             // action
         } else if (ae.getSource() == miniStatement) {
