@@ -46,7 +46,7 @@ public class PinChange extends JFrame implements ActionListener {
         newPinInput = new JPasswordField();
         newPinInput.setBounds(320, 336, 150, 30);
         newPinInput.setFont(new Font("Arial", Font.BOLD, 18));
-        newPinInput.add(newPinInput);
+        imgBackgroungLable.add(newPinInput);
         // re-enter pin text
         JLabel rePinText = new JLabel("Re-enter New Pin");
         rePinText.setBounds(170, 380, 300, 20);
@@ -98,7 +98,7 @@ public class PinChange extends JFrame implements ActionListener {
             //login
             String query2 = "update login set pinNumber = '"+rePin+"' where pinNumber = '"+pinNumber+"' ";
             //signup3
-            String query3 = "update signupform3 set pinNumber = '"+rePin+"' where pinNumber = '"+pinNumber+"' ";
+            String query3 = "update signupthree set pinNumber = '"+rePin+"' where pinNumber = '"+pinNumber+"' ";
 
             c.s.executeUpdate(query1);
             c.s.executeUpdate(query2);
