@@ -206,7 +206,7 @@ public class SignupThree extends JFrame implements ActionListener {
                     JOptionPane.showMessageDialog(null, "Select Services that you want");
                 } else {
                     Conn c = new Conn();
-                    String query1 = "insert into signupform3 values('" + formno + "','" + accountType + "','" + services
+                    String query1 = "insert into signupthree values('" + formno + "','" + accountType + "','" + services
                             + "','" + cardNumber
                             + "','" + pinNumber
                             + "')";
