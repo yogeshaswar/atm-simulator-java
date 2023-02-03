@@ -49,14 +49,14 @@ public class FastCash extends JFrame implements ActionListener {
         imgBackgroungLable.add(w100Button);
         // Widraw Btn
         w500Button = new JButton("Rs 500");
-        w2000Button.setBounds(380, 415, 140, 30);
-        w2000Button.addActionListener(this);
-        imgBackgroungLable.add(w2000Button);
+        w500Button.setBounds(380, 415, 140, 30);
+        w500Button.addActionListener(this);
+        imgBackgroungLable.add(w500Button);
         // Fastcash Btn
         w1000Button = new JButton("Rs 1,000");
-        w2000Button.setBounds(170, 450, 140, 30);
-        w2000Button.addActionListener(this);
-        imgBackgroungLable.add(w2000Button);
+        w1000Button.setBounds(170, 450, 140, 30);
+        w1000Button.addActionListener(this);
+        imgBackgroungLable.add(w1000Button);
         // Mini Statement Btn
         w2000Button = new JButton("Rs 2,000");
         w2000Button.setBounds(380, 450, 140, 30);
@@ -84,7 +84,7 @@ public class FastCash extends JFrame implements ActionListener {
         String amount = "";
         String type = "widraw";
         Date date = new Date();
-        
+
         if (ae.getSource() == exit) {
             setVisible(false);
             new Transcactions(pinNumber).setVisible(true);
@@ -94,7 +94,7 @@ public class FastCash extends JFrame implements ActionListener {
             try {
                 ResultSet resultSet = c.s
                         .executeQuery("Select * from bankdata where pinNumber =  '" + pinNumber + "' ");
-                //Balance Kitana hai?
+                // Balance Kitana hai?
                 int balance = 0;
                 while (resultSet.next()) {
                     if (resultSet.getString("type").equals("deposite")) {
@@ -103,14 +103,15 @@ public class FastCash extends JFrame implements ActionListener {
                         balance -= Integer.parseInt(resultSet.getString("amount"));
                     }
                 }
-                
-                //Balace > widraw : windraw ; error:
+
+                // Balace > widraw : windraw ; error:
                 if (ae.getSource() != exit && balance < Integer.parseInt(amount)) {
                     JOptionPane.showMessageDialog(null, "Insufficient Balance");
                     return;
                 }
 
-                String query = "insert into bankdata values('"+pinNumber+"', '"+date+"', '"+type+"', '"+amount+"')";
+                String query = "insert into bankdata values('" + pinNumber + "', '" + date + "', '" + type + "', '"
+                        + amount + "')";
                 c.s.executeUpdate(query);
                 JOptionPane.showMessageDialog(null, "Rs" + amount + "widraw successfully.");
                 setVisible(false);

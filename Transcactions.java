@@ -86,7 +86,8 @@ public class Transcactions extends JFrame implements ActionListener {
         } else if (ae.getSource() == miniStatement) {
             // action
         } else if (ae.getSource() == pinChange) {
-            // action
+            setVisible(false);
+            new PinChange(pinNumber).setVisible(true);
         } else if (ae.getSource() == balanceInquiry) {
             // action
         } else if (ae.getSource() == exit) {
