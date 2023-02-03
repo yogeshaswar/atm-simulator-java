@@ -41,7 +41,7 @@ public class Transcactions extends JFrame implements ActionListener {
         deposite.addActionListener(this);
         imgBackgroungLable.add(deposite);
         // Widraw Btn
-        widraw = new JButton("Cash Widrawl");
+        widraw = new JButton("Cash Widrawal");
         widraw.setBounds(380, 415, 140, 30);
         widraw.addActionListener(this);
         imgBackgroungLable.add(widraw);
