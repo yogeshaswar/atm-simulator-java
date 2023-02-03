@@ -53,22 +53,22 @@ public class FastCash extends JFrame implements ActionListener {
         w500Button.addActionListener(this);
         imgBackgroungLable.add(w500Button);
         // Fastcash Btn
-        w1000Button = new JButton("Rs 1,000");
+        w1000Button = new JButton("Rs 1000");
         w1000Button.setBounds(170, 450, 140, 30);
         w1000Button.addActionListener(this);
         imgBackgroungLable.add(w1000Button);
         // Mini Statement Btn
-        w2000Button = new JButton("Rs 2,000");
+        w2000Button = new JButton("Rs 2000");
         w2000Button.setBounds(380, 450, 140, 30);
         w2000Button.addActionListener(this);
         imgBackgroungLable.add(w2000Button);
         // Change PIN Btn
-        w5000Button = new JButton("Rs 5,000");
+        w5000Button = new JButton("Rs 5000");
         w5000Button.setBounds(170, 485, 140, 30);
         w5000Button.addActionListener(this);
         imgBackgroungLable.add(w5000Button);
         // Balance Inquiry Btn
-        w10000Button = new JButton("Rs 10,000");
+        w10000Button = new JButton("Rs 10000");
         w10000Button.setBounds(380, 485, 140, 30);
         w10000Button.addActionListener(this);
         imgBackgroungLable.add(w10000Button);
