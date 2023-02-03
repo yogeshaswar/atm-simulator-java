@@ -20,7 +20,7 @@ public class Conn {
             // Step 1: Driver register => jar file add
             // Class.forName(com.mysql.cj.jdbc.Driver);
             // Step 2: Create connection
-            c = DriverManager.getConnection("jdbc:mysql:///bankmanagementsystem", "root", "Ideclare@99233");
+            c = DriverManager.getConnection("jdbc:mysql:///bankmanagementsystem", "USER_NAME", "PASSWORD");
             // Notes: MySQL database commands:
             // 1. create database bankmanagementsystem(dbName);
             // 2. show databases;

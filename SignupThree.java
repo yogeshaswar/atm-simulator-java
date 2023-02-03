@@ -206,9 +206,10 @@ public class SignupThree extends JFrame implements ActionListener {
                     JOptionPane.showMessageDialog(null, "Select Services that you want");
                 } else {
                     Conn c = new Conn();
-                    String query1 = "insert into signupthree values('" + formno + "','" + accountType + "','" + services
-                            + "','" + cardNumber
+                    String query1 = "insert into signupthree values('" + formno + "','" + accountType + "','"
+                            + cardNumber
                             + "','" + pinNumber
+                            + "','" + services
                             + "')";
                     c.s.executeUpdate(query1);
                     // Login table
@@ -220,8 +221,8 @@ public class SignupThree extends JFrame implements ActionListener {
                     JOptionPane.showMessageDialog(null,
                             "Your Card Number is: " + cardNumber + "\nPIN is: " + pinNumber);
 
+                    setVisible(false);
                     new Deposite(pinNumber).setVisible(true);
-                    
 
                 }
             } catch (Exception e) {
