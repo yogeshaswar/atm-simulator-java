@@ -16,9 +16,9 @@ public class SignupTwo extends JFrame implements ActionListener {
         this.formno = formno;
         //formno = "378435";
         setLayout(null);
-        setSize(1000, 1000);
+        setSize(1000, 900);
         setVisible(true);
-        setLocation(200, 200);
+        setLocation(300, 0);
         setTitle("New Account Application Form Page 2");
         getContentPane().setBackground(Color.WHITE);
 

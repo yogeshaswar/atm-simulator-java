@@ -18,9 +18,9 @@ public class SignupOne extends JFrame implements ActionListener {
     public SignupOne() {
         setLayout(null);
         // Frame
-        setSize(850, 1000);
+        setSize(1000, 900);
         setVisible(true);
-        setLocation(340, 80);
+        setLocation(300, 0);
         setTitle("Create new account");
         getContentPane().setBackground(Color.WHITE);
 
@@ -32,12 +32,12 @@ public class SignupOne extends JFrame implements ActionListener {
         // Form No:
         JLabel formNo = new JLabel("Application Form No: " + randomNo);
         formNo.setFont(new Font("Arial", Font.BOLD, 38));
-        formNo.setBounds(140, 20, 600, 40);
+        formNo.setBounds(240, 20, 600, 40);
         add(formNo);
         // personalDetails
         JLabel personalDetails = new JLabel("Page 1: Personal Details");
         personalDetails.setFont(new Font("Arial", Font.BOLD, 26));
-        personalDetails.setBounds(230, 80, 600, 30);
+        personalDetails.setBounds(340, 80, 600, 30);
         add(personalDetails);
         // name
         JLabel name = new JLabel("Name: ");

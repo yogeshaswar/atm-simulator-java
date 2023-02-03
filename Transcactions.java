@@ -94,6 +94,7 @@ public class Transcactions extends JFrame implements ActionListener {
             new BalanceEnquiry(pinNumber).setVisible(true);
         } else if (ae.getSource() == exit) {
             setVisible(false);
+            new Login().setVisible(true);
         }
     }
 

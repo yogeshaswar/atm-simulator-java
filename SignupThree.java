@@ -16,9 +16,9 @@ public class SignupThree extends JFrame implements ActionListener {
         this.formno = formno;
         setLayout(null);
         // Frame
-        setSize(850, 1000);
+        setSize(1000, 900);
         setVisible(true);
-        setLocation(340, 80);
+        setLocation(300, 0);
         setTitle("Create new account Page:3");
         getContentPane().setBackground(Color.WHITE);
 

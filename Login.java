@@ -13,11 +13,11 @@ public class Login extends JFrame implements ActionListener {
     public Login() {
         setLayout(null);
         // setSize defines dimensions of frame
-        setSize(800, 500);
+        setSize(900, 900);
         // setVisible makes visible
         setVisible(true);
         // Screen Location
-        setLocation(350, 200);
+        setLocation(300, 0);
         // setTitle - screen Title
         setTitle("ATM");
         // ImageIcon - image
