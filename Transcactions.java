@@ -81,7 +81,8 @@ public class Transcactions extends JFrame implements ActionListener {
             setVisible(false);
             new Widrawal(pinNumber).setVisible(true);
         } else if (ae.getSource() == fastCash) {
-            // action
+            setVisible(false);
+            new FastCash(pinNumber).setVisible(true);
         } else if (ae.getSource() == miniStatement) {
             // action
         } else if (ae.getSource() == pinChange) {
